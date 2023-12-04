@@ -26,25 +26,22 @@ struct Status: Decodable {
 //    let feedback: String
     let sentCount: Int
 }
-func fetchFactsFromAPI() async throws -> [Fact] {
+func fetchFactsFromAPI(Url: String) async throws -> [String] {
   // Setup the variable lotsOfFilms
   // Call the API with some code
-    let apikey = ""
-    let url = URL(string: "https://cat-fact.herokuapp.com/facts")!
+//    let cookieHeader = " _ga=GA1.2.1058083798.1700925828; _ga_MHSNPJKWC7=GS1.2.1701636936.2.1.1701637925.0.0.0; _gid=GA1.2.1884966396.1701636936; session=53616c7465645f5fecf73e209469bcfea09b9b3a1c1cd756f631eff4b7c1b5e9fa7210d52a260dcdd6323b553d21a42ac363f63e7f60d8e80882f0f0e95eb51f"
+    let cookieHeader = ProcessInfo.processInfo.environment["adventCookieHeader"]
+    
+    
+    let url = URL(string: Url)!
+    var urlrequest = URLRequest(url:url)
+    urlrequest.addValue(cookieHeader ?? "", forHTTPHeaderField: "Cookie")
+    urlrequest.httpMethod = "GET"
+    urlrequest.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+
     print(url)
-    let (data, _) = try await URLSession.shared.data(from: url)
-    print(data)
-  // Using data from the API, assign a value to lotsOfFilms
-    let decoded = try JSONDecoder().decode([Fact].self, from:data)
-  // Give the completion handler the variable, lotsOfFilms
-    return decoded
+    let (data, _a) = try await URLSession.shared.data( for: urlrequest)
+    let dataParsed =  String(data: data, encoding: .utf8)?.lowercased()
+    let splitData = dataParsed?.components(separatedBy: "\n") ?? []
+    return splitData
 }
-//Task {
-//    do {
-//        let movies = try await fetchFactsFromAPI()
-//
-//        print(movies)
-//    } catch {
-//        print(error)
-//    }
-//}
