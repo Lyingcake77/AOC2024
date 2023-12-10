@@ -13,6 +13,8 @@ struct ContentView: View {
     @Query private var items: [Item]
     @State private var Day1aResult = ""
     @State private var Day1bResult = ""
+    @State private var Day2aResult = ""
+    @State private var Day2bResult = ""
     private let cache = dataLoader()
 
     var body: some View {
@@ -30,6 +32,20 @@ struct ContentView: View {
                             Label("Day 1b", systemImage: "pencil.and.outline")
                         }
                     Text(Day1bResult)
+                    
+                }
+                HStack {
+                        Button(action: day2a) {
+                            Label("Day 2a", systemImage: "pencil.and.outline")
+                        }
+                    Text(Day2aResult)
+                    
+                }
+                HStack {
+                        Button(action: day2b) {
+                            Label("Day 2b", systemImage: "pencil.and.outline")
+                        }
+                    Text(Day2bResult)
                     
                 }
             }
@@ -78,6 +94,29 @@ struct ContentView: View {
                 let total = try await day1b_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
                 Day1bResult = String(total)
                 UIPasteboard.general.string =  Day1bResult
+            } catch {
+                print(error)
+            }
+        }
+    }
+    private func day2a() {
+        Task{
+            do {
+                let total = try await day2a_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
+                Day2aResult = String(total)
+                UIPasteboard.general.string =  Day2aResult
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    private func day2b() {
+        Task{
+            do {
+                let total = try await day2b_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
+                Day2bResult = String(total)
+                UIPasteboard.general.string =  Day2bResult
             } catch {
                 print(error)
             }

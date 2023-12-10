@@ -14,8 +14,8 @@
             filePath = "AOC2024/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "callAPI()"
             landmarkType = "7">
             <Locations>
@@ -49,6 +49,21 @@
                   endingLineNumber = "56"
                   offsetFromSymbolStart = "152">
                </Location>
+               <Location
+                  uuid = "A08A2704-C185-40FD-9A2D-354234ADD2D2 - a96520b321849701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "152">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,8 +77,8 @@
             filePath = "AOC2024/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "callAPI()"
             landmarkType = "7">
             <Locations>
@@ -125,6 +140,66 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
                   endingLineNumber = "55"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - 82b28ff56c532b2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - f7f91e1c1f3ba885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - a96520b321849722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - bdf016d21c9d3521"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
                   offsetFromSymbolStart = "72">
                </Location>
             </Locations>
@@ -236,8 +311,8 @@
             filePath = "AOC2024/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "day1a()"
             landmarkType = "7">
             <Locations>
@@ -381,7 +456,39 @@
             startingLineNumber = "107"
             endingLineNumber = "107"
             landmarkName = "saveToDisk(withName:using:)"
-            landmarkType = "9">
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B05351CB-DB8B-4A9E-8396-FCFF11B61520 - 457ee0703aafccd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2024.Cache&lt; where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable, &#x3c4;_0_1: Swift.Encodable&gt;.saveToDisk(withName: Swift.String, using: __C.NSFileManager) throws -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/Cache.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "B05351CB-DB8B-4A9E-8396-FCFF11B61520 - 457ee0703aafcc11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2024.Cache&lt; where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable, &#x3c4;_0_1: Swift.Encodable&gt;.saveToDisk(withName: Swift.String, using: __C.NSFileManager) throws -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/Cache.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -397,7 +504,39 @@
             startingLineNumber = "102"
             endingLineNumber = "102"
             landmarkName = "saveToDisk(withName:using:)"
-            landmarkType = "9">
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AD7F780-DCEF-40E1-99B1-EAA93E1F7FEB - 457ee0703aafc36a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2024.Cache&lt; where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable, &#x3c4;_0_1: Swift.Encodable&gt;.saveToDisk(withName: Swift.String, using: __C.NSFileManager) throws -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/Cache.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  uuid = "3AD7F780-DCEF-40E1-99B1-EAA93E1F7FEB - 457ee0703aafccb4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2024.Cache&lt; where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable, &#x3c4;_0_1: Swift.Encodable&gt;.saveToDisk(withName: Swift.String, using: __C.NSFileManager) throws -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/Cache.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "324">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
