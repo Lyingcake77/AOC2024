@@ -60,24 +60,7 @@ struct ContentView: View {
     private func day1a() {
         Task{
             do {
-                let calibrationDocuments = try await fetchFactsFromAPI(Url:"https://adventofcode.com/2023/day/1/input")
-                var total=0
-                for calibrationDocument in calibrationDocuments {
-                    let characters = Array(calibrationDocument)
-                    var numbers : [String] = []
-                    for char in characters{
-                        if (["1","2","3","4","5","6","7","8","9"].contains(char))
-                        {
-                            numbers.append(String(char))
-                        }
-                    }
-                    total += Int(
-                            (numbers.first ?? "" )
-                            +
-                            (numbers.last ?? "")
-                        ) ?? 0
-                }
-                print(total)
+                let total = try await day1a_func()
                 Day1aResult = String(total)
                 UIPasteboard.general.string =  Day1aResult
             } catch {
@@ -85,50 +68,11 @@ struct ContentView: View {
             }
         }
     }
-    private func convertStringsNumsToNum(Char:String) -> String{
-        var char = Char
-        
-        char = char.replacingOccurrences(of: "two", with: "2"  )
-        char = char.replacingOccurrences(of: "three", with: "3")
-        char = char.replacingOccurrences(of: "four", with: "4" )
-        char = char.replacingOccurrences(of: "five", with: "5" )
-        char = char.replacingOccurrences(of: "six", with: "6"  )
-        char = char.replacingOccurrences(of: "seven", with: "7")
-        //reordered to properly replace data
-        char = char.replacingOccurrences(of: "nine", with: "9" )
-        char = char.replacingOccurrences(of: "one", with: "1"  )
-        char = char.replacingOccurrences(of: "eight", with: "8")
-        return char
-    }
+    
     private func day1b() {
         Task{
             do {
-                let calibrationDocuments = try await fetchFactsFromAPI(Url:"https://adventofcode.com/2023/day/1/input")
-                var total=0
-                for calibrationDocument in calibrationDocuments {
-                    
-                    let document = self.convertStringsNumsToNum(Char: calibrationDocument)
-                    let characters = Array(document)
-                    var numbers : [String] = []
-                    
-
-                    
-                    for char in characters{
-                        if(["1","2","3","4","5","6","7","8","9"].contains(char))
-                        {
-                            numbers.append(String(char))
-                        }
-                    }
-                    if (!characters.isEmpty){
-                        total += (Int(
-                                (numbers.first!)
-                                +
-                                (numbers.last!)
-                            ) ?? 0)
-                    }
-                    
-                }
-                print(total)
+                let total = try await day1b_func()
                 Day1bResult = String(total)
                 UIPasteboard.general.string =  Day1bResult
             } catch {
