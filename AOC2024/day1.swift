@@ -7,9 +7,8 @@
 
 import Foundation
 
-func day1a_func() async throws -> Int{
-    do {
-        let calibrationDocuments = try await fetchFactsFromAPI(Url:"https://adventofcode.com/2023/day/1/input")
+func day1a_func(calibrationDocuments: [String]) throws -> Int{
+
         var total=0
         for calibrationDocument in calibrationDocuments {
             let characters = Array(calibrationDocument)
@@ -29,17 +28,10 @@ func day1a_func() async throws -> Int{
         
         print(total)
         return total
-    } catch {
-        print(error)
-        return 0
-    }
     
 }
 
-func day1b_func() async throws -> Int{
-    do {
-        let calibrationDocuments = try await fetchFactsFromAPI(Url:"https://adventofcode.com/2023/day/1/input")
-        
+func day1b_func(calibrationDocuments: [String]) throws -> Int{
         var total = 0
         let r = "1|2|3|4|5|6|7|8|9|one|two|three|four|five|six|seven|eight|nine"
         let simpleDigits = try Regex(r)
@@ -86,9 +78,5 @@ func day1b_func() async throws -> Int{
             }
         }
         return total
-    } catch {
-        print(error)
-        return 0
-    }
 }
 

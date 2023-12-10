@@ -13,6 +13,7 @@ struct ContentView: View {
     @Query private var items: [Item]
     @State private var Day1aResult = ""
     @State private var Day1bResult = ""
+    private let cache = dataLoader()
 
     var body: some View {
         NavigationSplitView {
@@ -46,11 +47,13 @@ struct ContentView: View {
             Text("Select an item")
         }
     }
+  
+    
     private func callAPI() {
         Task{
             do {
-                let movies = try await fetchFactsFromAPI(Url:"https://adventofcode.com/2023/day/1/input")
-                print(movies)
+                let d = try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input")
+                print(d)
             } catch {
                 print(error)
             }
@@ -60,7 +63,7 @@ struct ContentView: View {
     private func day1a() {
         Task{
             do {
-                let total = try await day1a_func()
+                let total = try await day1a_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
                 Day1aResult = String(total)
                 UIPasteboard.general.string =  Day1aResult
             } catch {
@@ -72,7 +75,7 @@ struct ContentView: View {
     private func day1b() {
         Task{
             do {
-                let total = try await day1b_func()
+                let total = try await day1b_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
                 Day1bResult = String(total)
                 UIPasteboard.general.string =  Day1bResult
             } catch {
