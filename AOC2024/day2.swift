@@ -51,7 +51,7 @@ func parseStringIntoModel(elfGames: [String]) -> ElfGames{
     return newElfGames
 }
 func day2a_func(elfGames: [String]) throws -> Int{
-    var newElfGames =  parseStringIntoModel(elfGames: elfGames)
+    let newElfGames =  parseStringIntoModel(elfGames: elfGames)
     
     let rule1 = cube(color: "red", Count: 12)
     let rule2 = cube(color: "green", Count: 13)
@@ -76,7 +76,7 @@ func day2a_func(elfGames: [String]) throws -> Int{
 }
 func day2b_func(elfGames: [String]) throws -> Int{
     
-    var newElfGames =  parseStringIntoModel(elfGames: elfGames)
+    let newElfGames =  parseStringIntoModel(elfGames: elfGames)
     
     var total = 0
     for newElfGame in newElfGames.Games{

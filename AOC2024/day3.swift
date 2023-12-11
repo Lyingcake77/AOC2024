@@ -7,15 +7,24 @@
 
 import Foundation
 
-struct partNumberLocation{
-    var number: Int
-    var coordinate: [[Int:Int]]
-    var used: Bool
+class partNumberLocation{
+    var number: Int = 0
+    var coordinate: [(Int,Int)]
+    var used: Bool = false
+    init(number: Int, coordinate: [(Int, Int)], used: Bool) {
+        self.number = number
+        self.coordinate = coordinate
+        self.used = used
+    }
     
 }
-struct symbolLocation{
-    var sybol: String
-    var coordinate: [Int:Int]
+class symbolLocation{
+    var sybol: String = ""
+    var coordinate: (Int, Int)
+    init(sybol: String, coordinate: (Int, Int)) {
+        self.sybol = sybol
+        self.coordinate = coordinate
+    }
     
 }
 
@@ -30,12 +39,12 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
             let tempIndex = engineSchematicLine.index(engineSchematicLine.startIndex, offsetBy: idy)
             let engineSchematicChar = engineSchematicLine[tempIndex]
             if !engineSchematicChar.isNumber && engineSchematicChar != "."{
-                symbolLocations.append(symbolLocation(sybol: String(engineSchematicChar), coordinate: [idx : idy]))
+                symbolLocations.append(symbolLocation(sybol: String(engineSchematicChar), coordinate: (idx, idy)))
             }
             if engineSchematicChar.isNumber{
                 var newNumber = ""
                 var loop = true
-                var newPartNumberLocation = partNumberLocation(number: 0, coordinate: [], used: false)
+                let newPartNumberLocation = partNumberLocation(number: 0, coordinate: [], used: false)
                 while loop == true{
                     if(idy >= engineSchematicLine.count ){
                         loop = false
@@ -48,7 +57,7 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
                         if test.isNumber
                         {
                             newNumber += String(test)
-                            newPartNumberLocation.coordinate.append([idx : idy])
+                            newPartNumberLocation.coordinate.append((idx, idy))
                             idy+=1
                         }
                         else{
@@ -59,16 +68,40 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
                             partNumberLocations.append(newPartNumberLocation)
                         }
                     }
-                        
-                    
-                    
                 }
             }
             idy += 1
         }
     }
     
-    return 0
+    var total = 0
+    for sym in symbolLocations{
+        let row = sym.coordinate.0
+        let col = sym.coordinate.1
+        
+        let possibleNumbers = partNumberLocations.filter {
+            x in x.used == false && x.coordinate.filter{
+                //row column check
+                y in
+                (y.0 == row &&
+                 (y.1 == col || y.1 == col+1 || y.1 == col-1)
+                ) ||
+                (y.0 == row-1  &&
+                 (y.1 == col || y.1 == col+1 || y.1 == col-1)) ||
+                (y.0 == row+1  &&
+                 (y.1 == col || y.1 == col+1 || y.1 == col-1))
+                
+            }.count > 0
+        }
+        
+        for partNumber in possibleNumbers{
+            total += partNumber.number
+            partNumber.used = true
+        }
+        
+    }
+    
+    return total
 }
 func day3b_func(engineSchematic: [String]) throws -> Int{
     
