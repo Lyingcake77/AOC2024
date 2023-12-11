@@ -15,6 +15,8 @@ struct ContentView: View {
     @State private var Day1bResult = ""
     @State private var Day2aResult = ""
     @State private var Day2bResult = ""
+    @State private var Day3aResult = ""
+    @State private var Day3bResult = ""
     private let cache = dataLoader()
 
     var body: some View {
@@ -46,6 +48,20 @@ struct ContentView: View {
                             Label("Day 2b", systemImage: "pencil.and.outline")
                         }
                     Text(Day2bResult)
+                    
+                }
+                HStack {
+                        Button(action: day3a) {
+                            Label("Day 3a", systemImage: "pencil.and.outline")
+                        }
+                    Text(Day3aResult)
+                    
+                }
+                HStack {
+                        Button(action: day3b) {
+                            Label("Day 3b", systemImage: "pencil.and.outline")
+                        }
+                    Text(Day3bResult)
                     
                 }
             }
@@ -117,6 +133,29 @@ struct ContentView: View {
                 let total = try await day2b_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
                 Day2bResult = String(total)
                 UIPasteboard.general.string =  Day2bResult
+            } catch {
+                print(error)
+            }
+        }
+    }
+    private func day3a() {
+        Task{
+            do {
+                let total = try await day3a_func(engineSchematic: try await cache.loadData(Url: "https://adventofcode.com/2023/day/3/input"))
+                Day3aResult = String(total)
+                UIPasteboard.general.string =  Day3aResult
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    private func day3b() {
+        Task{
+            do {
+                let total = try await day3b_func(engineSchematic: try await cache.loadData(Url: "https://adventofcode.com/2023/day/3/input"))
+                Day3bResult = String(total)
+                UIPasteboard.general.string =  Day3bResult
             } catch {
                 print(error)
             }
