@@ -76,7 +76,7 @@ func convertSchematicsIntoLocations(engineSchematic:[String]) ->(partNumberLocat
 }
 
 func day3a_func(engineSchematic: [String]) throws -> Int{
-    var (partNumberLocations, symbolLocations) =  convertSchematicsIntoLocations(engineSchematic: engineSchematic)
+    let (partNumberLocations, symbolLocations) =  convertSchematicsIntoLocations(engineSchematic: engineSchematic)
     
     var total = 0
     for sym in symbolLocations{
@@ -108,7 +108,7 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
     return total
 }
 func day3b_func(engineSchematic: [String]) throws -> Int{
-    var (partNumberLocations, symbolLocations) =  convertSchematicsIntoLocations(engineSchematic: engineSchematic)
+    let (partNumberLocations, symbolLocations) =  convertSchematicsIntoLocations(engineSchematic: engineSchematic)
     
     var total = 0
     
