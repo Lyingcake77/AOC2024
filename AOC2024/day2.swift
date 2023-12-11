@@ -24,7 +24,7 @@ struct cube {
 
 }
 
-func day2a_func(elfGames: [String]) throws -> Int{
+func parseStringIntoModel(elfGames: [String]) -> ElfGames{
     var newElfGames =  ElfGames(Games: [])
     for elfGame in elfGames {
 
@@ -37,10 +37,10 @@ func day2a_func(elfGames: [String]) throws -> Int{
             let reveals = games[1].split(separator: ";")
             for rev in reveals{
                 var newReveals = reveal(cubes: [])
-                var cubes = rev.split(separator: ",")
+                let cubes = rev.split(separator: ",")
                 for cub in cubes{
-                    var c = cub.split(separator: " ")
-                    var newCube = cube(color: String(c[1]), Count: Int(c[0]) ?? 0)
+                    let cubeRaw = cub.split(separator: " ")
+                    let newCube = cube(color: String(cubeRaw[1]), Count: Int(cubeRaw[0]) ?? 0)
                     newReveals.cubes.append(newCube)
                 }
                 newElfGame.reveals.append(newReveals)
@@ -48,13 +48,17 @@ func day2a_func(elfGames: [String]) throws -> Int{
             newElfGames.Games.append(newElfGame)
         }
     }
+    return newElfGames
+}
+func day2a_func(elfGames: [String]) throws -> Int{
+    var newElfGames =  parseStringIntoModel(elfGames: elfGames)
+    
     let rule1 = cube(color: "red", Count: 12)
     let rule2 = cube(color: "green", Count: 13)
     let rule3 = cube(color: "blue", Count: 14)
     
-    let a = newElfGames.Games.lazy
-        .filter { c in c.Game < 10 }
-    let b = newElfGames.Games.lazy
+    //https://stackoverflow.com/questions/29655304/is-something-in-swift-like-linq-in-c-sharp
+    let gamesThatMatchRules = newElfGames.Games.lazy
         .filter {
             x in x.reveals.filter{
                 y in y.cubes.filter{
@@ -65,11 +69,42 @@ func day2a_func(elfGames: [String]) throws -> Int{
             }.count == x.reveals.count
         }
     var total = 0
-    for x in b{
-        total += x.Game
+    for game in gamesThatMatchRules{
+        total += game.Game
     }
     return total
 }
 func day2b_func(elfGames: [String]) throws -> Int{
-    return 0
+    
+    var newElfGames =  parseStringIntoModel(elfGames: elfGames)
+    
+    var total = 0
+    for newElfGame in newElfGames.Games{
+        
+        var colors: [String:Int] = [:]
+        for newReveals in newElfGame.reveals{
+            
+            for cub in newReveals.cubes{
+                let dicColor = colors[cub.color]
+                if dicColor == nil{
+                    colors[cub.color] = cub.Count
+                }
+                else{
+                    if dicColor! < cub.Count{
+                        colors[cub.color] = cub.Count
+                    }
+                }
+            }
+            
+        }
+        if colors.count > 0{
+            var power = 1
+            for color in colors{
+                power *= color.value
+            }
+            total += power
+        }
+    }
+    
+    return total
 }
