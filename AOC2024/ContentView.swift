@@ -95,7 +95,7 @@ struct ContentView: View {
     private func day1a() {
         Task{
             do {
-                let total = try await day1a_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
+                let total = try day1a_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
                 Day1aResult = String(total)
                 UIPasteboard.general.string =  Day1aResult
             } catch {
@@ -107,7 +107,7 @@ struct ContentView: View {
     private func day1b() {
         Task{
             do {
-                let total = try await day1b_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
+                let total = try day1b_func(calibrationDocuments: try await cache.loadData(Url: "https://adventofcode.com/2023/day/1/input"))
                 Day1bResult = String(total)
                 UIPasteboard.general.string =  Day1bResult
             } catch {
@@ -118,7 +118,7 @@ struct ContentView: View {
     private func day2a() {
         Task{
             do {
-                let total = try await day2a_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
+                let total = try day2a_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
                 Day2aResult = String(total)
                 UIPasteboard.general.string =  Day2aResult
             } catch {
@@ -130,7 +130,7 @@ struct ContentView: View {
     private func day2b() {
         Task{
             do {
-                let total = try await day2b_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
+                let total = try day2b_func(elfGames: try await cache.loadData(Url: "https://adventofcode.com/2023/day/2/input"))
                 Day2bResult = String(total)
                 UIPasteboard.general.string =  Day2bResult
             } catch {
@@ -141,7 +141,7 @@ struct ContentView: View {
     private func day3a() {
         Task{
             do {
-                let total = try await day3a_func(engineSchematic: try await cache.loadData(Url: "https://adventofcode.com/2023/day/3/input"))
+                let total = try day3a_func(engineSchematic: try await cache.loadData(Url: "https://adventofcode.com/2023/day/3/input"))
                 Day3aResult = String(total)
                 UIPasteboard.general.string =  Day3aResult
             } catch {
@@ -153,7 +153,7 @@ struct ContentView: View {
     private func day3b() {
         Task{
             do {
-                let total = try await day3b_func(engineSchematic: try await cache.loadData(Url: "https://adventofcode.com/2023/day/3/input"))
+                let total = try day3b_func(engineSchematic: try await cache.loadData(Url: "https://adventofcode.com/2023/day/3/input"))
                 Day3bResult = String(total)
                 UIPasteboard.general.string =  Day3bResult
             } catch {

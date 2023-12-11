@@ -1049,366 +1049,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "ED8B0C6C-C580-4819-A4E3-D9DCA8928CC7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "71CA290F-20CA-4F67-AD1B-908860D2E6EB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "71CA290F-20CA-4F67-AD1B-908860D2E6EB - 79d6cb1edea484df"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "1400">
-               </Location>
-               <Location
-                  uuid = "71CA290F-20CA-4F67-AD1B-908860D2E6EB - 79d6cb1edea484df"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "1580">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "51780409-B908-47F3-ACAC-BCDE65BB3146"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "51780409-B908-47F3-ACAC-BCDE65BB3146 - 79d6cb1edea484fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "1424">
-               </Location>
-               <Location
-                  uuid = "51780409-B908-47F3-ACAC-BCDE65BB3146 - 79d6cb1edea484fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "1604">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5AB52C60-2DE0-4AF1-9EB1-0AD47ECC4C74"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "5AB52C60-2DE0-4AF1-9EB1-0AD47ECC4C74 - 79d6cb1edea48b36"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "1628">
-               </Location>
-               <Location
-                  uuid = "5AB52C60-2DE0-4AF1-9EB1-0AD47ECC4C74 - 79d6cb1edea48bf4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1852">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F200CB6B-D9DC-444D-8F10-A329F624FFB6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "F200CB6B-D9DC-444D-8F10-A329F624FFB6 - 79d6cb1edea48b53"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "1624">
-               </Location>
-               <Location
-                  uuid = "F200CB6B-D9DC-444D-8F10-A329F624FFB6 - 79d6cb1edea48b53"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "1704">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B4E06821-BF4D-466F-AE74-F2AFE2C2F4C5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "B4E06821-BF4D-466F-AE74-F2AFE2C2F4C5 - 79d6cb1edea484b2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "1592">
-               </Location>
-               <Location
-                  uuid = "B4E06821-BF4D-466F-AE74-F2AFE2C2F4C5 - 79d6cb1edea484b2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "1648">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4B193CF7-3E4F-4B01-A571-2E83EF18FF3F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "4B193CF7-3E4F-4B01-A571-2E83EF18FF3F - 79d6cb1edea48bf4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1664">
-               </Location>
-               <Location
-                  uuid = "4B193CF7-3E4F-4B01-A571-2E83EF18FF3F - 79d6cb1edea48bf4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1852">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "61357031-13CA-4D06-853C-8A66AE790DF8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "day3a_func(engineSchematic:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "61357031-13CA-4D06-853C-8A66AE790DF8 - 79d6cb1edea48b36"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "1628">
-               </Location>
-               <Location
-                  uuid = "61357031-13CA-4D06-853C-8A66AE790DF8 - 79d6cb1edea48b70"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AOC2024.day3a_func(engineSchematic: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
-                  moduleName = "AOC2024"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "1816">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5A17A5D2-30EB-46B5-B8EB-E153B6E2E64E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AOC2024/day3.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -1417,14 +1065,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "236E3828-DD8B-417F-96EC-240B3B7F05F2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
             <Locations>
@@ -1516,8 +1164,8 @@
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
             <Locations>
@@ -1624,8 +1272,8 @@
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
             <Locations>
@@ -1672,8 +1320,8 @@
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
             <Locations>
@@ -1720,8 +1368,8 @@
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
             <Locations>
@@ -1768,8 +1416,8 @@
             filePath = "AOC2024/day3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "day3a_func(engineSchematic:)"
             landmarkType = "9">
          </BreakpointContent>

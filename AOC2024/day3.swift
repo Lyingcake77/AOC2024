@@ -19,17 +19,16 @@ class partNumberLocation{
     
 }
 class symbolLocation{
-    var sybol: String = ""
+    var symbol: String = ""
     var coordinate: (Int, Int)
-    init(sybol: String, coordinate: (Int, Int)) {
-        self.sybol = sybol
+    init(symbol: String, coordinate: (Int, Int)) {
+        self.symbol = symbol
         self.coordinate = coordinate
     }
     
 }
 
-func day3a_func(engineSchematic: [String]) throws -> Int{
-   
+func convertSchematicsIntoLocations(engineSchematic:[String]) ->(partNumberLocations: [partNumberLocation], symbolLocations: [symbolLocation]) {
     var partNumberLocations: [partNumberLocation] = []
     var symbolLocations: [symbolLocation] = []
     
@@ -39,7 +38,7 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
             let tempIndex = engineSchematicLine.index(engineSchematicLine.startIndex, offsetBy: idy)
             let engineSchematicChar = engineSchematicLine[tempIndex]
             if !engineSchematicChar.isNumber && engineSchematicChar != "."{
-                symbolLocations.append(symbolLocation(sybol: String(engineSchematicChar), coordinate: (idx, idy)))
+                symbolLocations.append(symbolLocation(symbol: String(engineSchematicChar), coordinate: (idx, idy)))
             }
             if engineSchematicChar.isNumber{
                 var newNumber = ""
@@ -73,6 +72,11 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
             idy += 1
         }
     }
+    return (partNumberLocations, symbolLocations)
+}
+
+func day3a_func(engineSchematic: [String]) -> Int{
+    var partNumberLocations, symbolLocations =  convertSchematicsIntoLocations(engineSchematic)
     
     var total = 0
     for sym in symbolLocations{
@@ -103,8 +107,46 @@ func day3a_func(engineSchematic: [String]) throws -> Int{
     
     return total
 }
-func day3b_func(engineSchematic: [String]) throws -> Int{
+func day3b_func(engineSchematic: [String]) -> Int{
+    var partNumberLocations, symbolLocations =  convertSchematicsIntoLocations(engineSchematic)
     
+    var total = 0
     
-    return 0
+    let maybeGearSymbols = symbolLocations.filter {
+        x in x.symbol == "*"
+    }
+    
+    for sym in maybeGearSymbols{
+        let row = sym.coordinate.0
+        let col = sym.coordinate.1
+        
+        let possibleNumbers = partNumberLocations.filter {
+            x in x.used == false && x.coordinate.filter{
+                //row column check
+                y in
+                (y.0 == row &&
+                 (y.1 == col || y.1 == col+1 || y.1 == col-1)
+                ) ||
+                (y.0 == row-1  &&
+                 (y.1 == col || y.1 == col+1 || y.1 == col-1)) ||
+                (y.0 == row+1  &&
+                 (y.1 == col || y.1 == col+1 || y.1 == col-1))
+                
+            }.count == 2
+        }
+        
+        let vv = 0
+        for partNumber in possibleNumbers{
+            if vv%2==0{
+                total += vv * partNumber.number
+                vv = 0
+            }
+            else{
+                vv = partNumber.number
+            }
+            partNumber.used = true
+        }
+        
+    }
+    return total
 }
