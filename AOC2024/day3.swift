@@ -75,8 +75,8 @@ func convertSchematicsIntoLocations(engineSchematic:[String]) ->(partNumberLocat
     return (partNumberLocations, symbolLocations)
 }
 
-func day3a_func(engineSchematic: [String]) -> Int{
-    var partNumberLocations, symbolLocations =  convertSchematicsIntoLocations(engineSchematic)
+func day3a_func(engineSchematic: [String]) throws -> Int{
+    var (partNumberLocations, symbolLocations) =  convertSchematicsIntoLocations(engineSchematic: engineSchematic)
     
     var total = 0
     for sym in symbolLocations{
@@ -107,8 +107,8 @@ func day3a_func(engineSchematic: [String]) -> Int{
     
     return total
 }
-func day3b_func(engineSchematic: [String]) -> Int{
-    var partNumberLocations, symbolLocations =  convertSchematicsIntoLocations(engineSchematic)
+func day3b_func(engineSchematic: [String]) throws -> Int{
+    var (partNumberLocations, symbolLocations) =  convertSchematicsIntoLocations(engineSchematic: engineSchematic)
     
     var total = 0
     
@@ -132,20 +132,25 @@ func day3b_func(engineSchematic: [String]) -> Int{
                 (y.0 == row+1  &&
                  (y.1 == col || y.1 == col+1 || y.1 == col-1))
                 
-            }.count == 2
+            }.count > 0
         }
-        
-        let vv = 0
-        for partNumber in possibleNumbers{
-            if vv%2==0{
-                total += vv * partNumber.number
-                vv = 0
+        if(possibleNumbers.count == 2){
+            //bad practive i know, vv is only here to track every other number. that way we can sum every 2 possible numbers
+            var vv = 1
+            var tempNum = 0
+            for partNumber in possibleNumbers{
+                if vv%2==0{
+                    total += tempNum * partNumber.number
+                    tempNum = 0
+                }
+                else{
+                    tempNum = partNumber.number
+                }
+                partNumber.used = true
+                vv+=1
             }
-            else{
-                vv = partNumber.number
-            }
-            partNumber.used = true
         }
+       
         
     }
     return total
