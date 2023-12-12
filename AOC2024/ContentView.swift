@@ -180,7 +180,7 @@ struct ContentView: View {
     private func day4a() {
         Task{
             do {
-                let total = try day4a_func(scratchCards: try await cache.loadData(Url: "https://adventofcode.com/2023/day/4/input"))
+                let total = try day4a_func(scratchCardsRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/4/input"))
                 Day4aResult = String(total)
                 UIPasteboard.general.string =  Day4aResult
             } catch {
@@ -192,7 +192,7 @@ struct ContentView: View {
     private func day4b() {
         Task{
             do {
-                let total = try day4b_func(scratchCards: try await cache.loadData(Url: "https://adventofcode.com/2023/day/4/input"))
+                let total = try day4b_func(scratchCardsRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/4/input"))
                 Day4bResult = String(total)
                 UIPasteboard.general.string =  Day4bResult
             } catch {
