@@ -63,8 +63,9 @@ class almanac{
                 }
                 return source
             }
-            return source
+            i+=1
         }
+        return source
     }
 }
 struct sourceMap{
