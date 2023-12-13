@@ -220,7 +220,7 @@ struct ContentView: View {
     private func day5a() {
         Task{
             do {
-                let total = try day5a_func(seedAlmanacRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/5/input"))
+                let total = try day5a_func(almanacRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/5/input"))
                 Day5aResult = String(total)
                 UIPasteboard.general.string =  Day5aResult
             } catch {
@@ -232,7 +232,7 @@ struct ContentView: View {
     private func day5b() {
         Task{
             do {
-                let total = try day5b_func(seedAlmanacRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/5/input"))
+                let total = try day5b_func(almanacRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/5/input"))
                 Day5bResult = String(total)
                 UIPasteboard.general.string =  Day5bResult
             } catch {

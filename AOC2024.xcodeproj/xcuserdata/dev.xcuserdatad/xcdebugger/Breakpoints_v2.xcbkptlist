@@ -94,6 +94,21 @@
                   endingLineNumber = "104"
                   offsetFromSymbolStart = "152">
                </Location>
+               <Location
+                  uuid = "A08A2704-C185-40FD-9A2D-354234ADD2D2 - a96520b3218490d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "152">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -350,6 +365,66 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
                   endingLineNumber = "103"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - 82b28ff56c532cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - f7f91e1c1f3baf55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - a96520b3218490f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "4F3E1197-6219-4D72-98DF-7CD243428783 - bdf016d21c9d32f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.callAPI() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
                   offsetFromSymbolStart = "72">
                </Location>
             </Locations>
@@ -2015,6 +2090,66 @@
                   endingLineNumber = "183"
                   offsetFromSymbolStart = "72">
                </Location>
+               <Location
+                  uuid = "C9A72AD3-A7F5-4DAF-A666-49D632E289D6 - 45e87c43ec9b6c7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.day4a() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "C9A72AD3-A7F5-4DAF-A666-49D632E289D6 - 6649eb5be5d8afd4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.day4a() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "C9A72AD3-A7F5-4DAF-A666-49D632E289D6 - 6074878dfac2a872"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.day4a() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "C9A72AD3-A7F5-4DAF-A666-49D632E289D6 - e4ef2d2cfde5671"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in AOC2024.ContentView.day4a() -&gt; ()"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "72">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2062,6 +2197,21 @@
                   startingLineNumber = "52"
                   endingLineNumber = "52"
                   offsetFromSymbolStart = "3300">
+               </Location>
+               <Location
+                  uuid = "9E0F4F18-ABD1-49CC-98C2-DE743FBEA4BF - 106552472f751ae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2024.day4a_func(scratchCardsRaw: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day4.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "104">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2159,6 +2309,21 @@
                   endingLineNumber = "59"
                   offsetFromSymbolStart = "3800">
                </Location>
+               <Location
+                  uuid = "72752C90-AB1A-42B6-9536-E79DEF92509D - 106552472f751d29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2024.day4a_func(scratchCardsRaw: Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
+                  moduleName = "AOC2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Documents/GitHub/AOC2024/AOC2024/day4.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "464">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2220,9 +2385,9 @@
             filePath = "AOC2024/day5.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "convertAlmanac(seedAlmanacRaw:)"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "convertAlmanac(almanacRaw:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

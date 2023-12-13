@@ -16,12 +16,12 @@ class almanac{
     
     func getAllMaps() -> [String]{
         //TODO: revisit, no internet existed in the making of this code
-        let a = sourceMaps.map{$0.sourceName}
-        let b = sourceMaps.map{$0.destinationName}
-        let c = b.difference(from: a)
-        let cc = b.applying(c) ?? []
-        
-        return b+cc
+        let allSources = sourceMaps.map{$0.sourceName}
+        let allDestinations = sourceMaps.map{$0.destinationName}
+        let missingDestinationOnlyDidderence = allDestinations.difference(from: allSources)
+        let missingDestination = allDestinations.applying(missingDestinationOnlyDidderence) ?? []
+        //or all destinations and misssing stuff
+        return allSources+missingDestination
     }
     
     func convertSourceToDestination(source:Int, StartingMap:String, EndingMap:String, forwardDirection:Bool = true) -> Int{
@@ -53,16 +53,35 @@ class almanac{
             //if end of range, then we dont bother checking the next item.
             let endOfRange = i+1 < ruleCount
 
-            if currentRule.sourceRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].sourceRangeStart){
-                if currentRule.sourceRangeStart <= source && source < currentRule.sourceRangeStart + currentRule.rangeLength{
-                    //double check this math, the one spot i didnt flush out, we want the conversion.
-                    //TODO: handle going backwards
-                    let diff = currentRule.rangeLength - source
-                    let mappedSource = currentRule.destinationRangeStart + diff
-                    return sourceToDestination(sourceName: sourceMap.destinationName, source: mappedSource, sourceMap: firstMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+            if forwardDirection{
+                if currentRule.sourceRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].sourceRangeStart){
+                    if currentRule.sourceRangeStart <= source && source < currentRule.sourceRangeStart + currentRule.rangeLength{
+                        //double check this math, the one spot i didnt flush out, we want the conversion.
+                        //TODO: handle going backwards
+                        let diff = currentRule.rangeLength - source
+                        let mappedSource = currentRule.destinationRangeStart + diff
+                        return sourceToDestination(sourceName: sourceMap.destinationName, source: mappedSource, sourceMap: firstMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+                    }
+                    return source
                 }
-                return source
             }
+            else{
+                //this works just like forwards, but backwards
+                if currentRule.destinationRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].destinationRangeStart){
+                    if currentRule.destinationRangeStart <= source && source < currentRule.destinationRangeStart + currentRule.rangeLength{
+                        //double check this math, the one spot i didnt flush out, we want the conversion.
+                        //TODO: handle going backwards
+                        let diff = currentRule.rangeLength - source
+                        let mappedSource = currentRule.sourceRangeStart + diff
+                        
+                        return sourceToDestination(sourceName: sourceMap.sourceName, source: mappedSource, sourceMap: firstMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+                    }
+                    return source
+                }
+            }
+
+            
+            
             i+=1
         }
         return source
@@ -91,18 +110,56 @@ struct sourceConversionRule{
     }
 }
 //i feel this should be an extention in some way, its its own thing, but also related.
-func convertAlmanac(seedAlmanacRaw: [String]) -> ([Int], [sourceMap]){
-    var newSeedAlmanacs: [sourceMap]=[]
+func convertAlmanac(almanacRaw: [String]) -> ([Int], [sourceMap]){
+    var newSourceMaps: [sourceMap]=[]
     var seeds:[Int]=[]
 
     
-    return (seeds, newSeedAlmanacs)
+    //pain in using the while loop all the time
+    var i = 0
+    let almanacRawCount = almanacRaw.count
+    while i < almanacRawCount{
+        let almanacLineRaw = almanacRaw[i]
+        //begining is the seed data, there might be a better way to do this? but i dont want to use regex or a contains.
+        if i == 0{
+            seeds = almanacLineRaw.split(separator: ":")[1].split(separator: " ").map{Int($0) ?? 0}
+        }
+        else if almanacLineRaw.isEmpty{
+            //do nothing
+        }
+        else if almanacLineRaw.first!.isLetter{
+            let sourceName = ""
+            let destinationName = ""
+            var rouceRules:[sourceConversionRule]=[]
+            //increment by 1 to start getting the rules
+            //we assume that there will be a new line if we just got a new map name
+            i+=1
+            while !almanacRaw[i].isEmpty{
+                
+                let rules = almanacRaw[i].split(separator: " ")
+                
+                rouceRules.append(sourceConversionRule(sourceRangeStart: Int(rules[1]) ?? 0, destinationRangeStart: Int(rules[0]) ?? 0, rangeLength: Int(rules[2]) ?? 0))
+                
+                i+=1
+                
+            }
+            
+            //create a map
+            //loop through all numbers
+            //exit loop
+            newSourceMaps.append(sourceMap(sourceName: sourceName, destinationName: destinationName, sourceConversionRules: rouceRules))
+        }
+        i+=1
+    }
+
+    
+    return (seeds, newSourceMaps)
 }
-func day5a_func(seedAlmanacRaw: [String]) throws -> Int{
+func day5a_func(almanacRaw: [String]) throws -> Int{
     
-    var (seeds, sourceMaps) = convertAlmanac(seedAlmanacRaw: seedAlmanacRaw)
+    let (seeds, sourceMaps) = convertAlmanac(almanacRaw: almanacRaw)
     
-    var newAlmanac = almanac(sourceMaps: sourceMaps)
+    let newAlmanac = almanac(sourceMaps: sourceMaps)
     var total = 0
     //idk if swift has a begin, loop, finally kind of statement
     var firstCheck = true
@@ -123,9 +180,9 @@ func day5a_func(seedAlmanacRaw: [String]) throws -> Int{
     return total
 }
 
-func day5b_func(seedAlmanacRaw: [String]) throws -> Int{
-    var (seeds, sourceMaps) = convertAlmanac(seedAlmanacRaw: seedAlmanacRaw)
-    var total = 0
+func day5b_func(almanacRaw: [String]) throws -> Int{
+    let (seeds, sourceMaps) = convertAlmanac(almanacRaw: almanacRaw)
+    let total = 0
   
                   
     
