@@ -38,10 +38,14 @@ class almanac{
         if sourceName == finalDestinationName{
             return source
         }
+        
+
+         let firstMap = self.sourceMaps.filter{
+                x in (forwardDirection ? x.sourceName == sourceMap.destinationName : x.destinationName == sourceMap.sourceName)
+            }.first
+        
         //there should always be a next SA because we checked if we reached the destination
-        let firstMap = self.sourceMaps.filter{
-            x in (forwardDirection ? x.sourceName == sourceMap.destinationName : x.destinationName == sourceMap.sourceName)
-        }.first!
+
         
         
         let ruleCount = sourceMap.sourceConversionRules.count
@@ -51,40 +55,41 @@ class almanac{
             
             let currentRule = sourceMap.sourceConversionRules[i]
             //if end of range, then we dont bother checking the next item.
-            let endOfRange = i+1 < ruleCount
+            let endOfRange = i+1 >= ruleCount
 
             if forwardDirection{
                 if currentRule.sourceRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].sourceRangeStart){
                     if currentRule.sourceRangeStart <= source && source < currentRule.sourceRangeStart + currentRule.rangeLength{
                         //double check this math, the one spot i didnt flush out, we want the conversion.
                         //TODO: handle going backwards
-                        let diff = currentRule.rangeLength - source
+                        let diff = source - currentRule.sourceRangeStart
                         let mappedSource = currentRule.destinationRangeStart + diff
-                        return sourceToDestination(sourceName: sourceMap.destinationName, source: mappedSource, sourceMap: firstMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+                        return sourceToDestination(sourceName: sourceMap.destinationName, source: mappedSource, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
                     }
-                    return source
+                    return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
                 }
+//                return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
             }
-            else{
-                //this works just like forwards, but backwards
-                if currentRule.destinationRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].destinationRangeStart){
-                    if currentRule.destinationRangeStart <= source && source < currentRule.destinationRangeStart + currentRule.rangeLength{
-                        //double check this math, the one spot i didnt flush out, we want the conversion.
-                        //TODO: handle going backwards
-                        let diff = currentRule.rangeLength - source
-                        let mappedSource = currentRule.sourceRangeStart + diff
-                        
-                        return sourceToDestination(sourceName: sourceMap.sourceName, source: mappedSource, sourceMap: firstMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
-                    }
-                    return source
-                }
-            }
+//            else{
+//                //this works just like forwards, but backwards
+//                if currentRule.destinationRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].destinationRangeStart){
+//                    if currentRule.destinationRangeStart <= source && source < currentRule.destinationRangeStart + currentRule.rangeLength{
+//                        //double check this math, the one spot i didnt flush out, we want the conversion.
+//                        //TODO: handle going backwards
+//                        let diff = currentRule.rangeLength - source
+//                        let mappedSource = currentRule.sourceRangeStart + diff
+//                        
+//                        return sourceToDestination(sourceName: sourceMap.sourceName, source: mappedSource, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+//                    }
+//                    return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+//                }
+//            }
 
             
             
             i+=1
         }
-        return source
+        return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
     }
 }
 struct sourceMap{
@@ -128,8 +133,13 @@ func convertAlmanac(almanacRaw: [String]) -> ([Int], [sourceMap]){
             //do nothing
         }
         else if almanacLineRaw.first!.isLetter{
-            let sourceName = ""
-            let destinationName = ""
+            
+            
+            
+            let names = String(almanacLineRaw.split(separator: " ")[0]).split(separator: "-to-")
+            
+            let sourceName: String = String(names[0])
+            let destinationName: String = String(names[1])
             var rouceRules:[sourceConversionRule]=[]
             //increment by 1 to start getting the rules
             //we assume that there will be a new line if we just got a new map name
@@ -143,7 +153,8 @@ func convertAlmanac(almanacRaw: [String]) -> ([Int], [sourceMap]){
                 i+=1
                 
             }
-            
+            //order the rules...
+            rouceRules = rouceRules.sorted { $0.sourceRangeStart < $1.sourceRangeStart }
             //create a map
             //loop through all numbers
             //exit loop
@@ -152,7 +163,6 @@ func convertAlmanac(almanacRaw: [String]) -> ([Int], [sourceMap]){
         i+=1
     }
 
-    
     return (seeds, newSourceMaps)
 }
 func day5a_func(almanacRaw: [String]) throws -> Int{
