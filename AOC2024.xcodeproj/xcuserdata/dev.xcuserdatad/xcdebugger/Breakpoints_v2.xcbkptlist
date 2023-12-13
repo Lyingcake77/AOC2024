@@ -2220,8 +2220,8 @@
             filePath = "AOC2024/day5.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "convertAlmanac(seedAlmanacRaw:)"
             landmarkType = "9">
          </BreakpointContent>
