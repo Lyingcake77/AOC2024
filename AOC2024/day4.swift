@@ -22,6 +22,7 @@ class scratchCard{
         self.winningCount = winningCount
     }
 }
+//copied somewhere from stack overflow
 precedencegroup PowerPrecedence { higherThan: MultiplicationPrecedence }
 infix operator ^^ : PowerPrecedence
 func ^^ (radix: Int, power: Int) -> Int {
