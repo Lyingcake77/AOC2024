@@ -57,7 +57,7 @@ func convertScratchCards(scratchCardsRaw: [String]) -> [scratchCard]{
     return scratchCards
 }
 func day4a_func(scratchCardsRaw: [String]) throws -> Int{
-    var scratchCards: [scratchCard]=convertScratchCards(scratchCardsRaw: scratchCardsRaw)
+    let scratchCards: [scratchCard]=convertScratchCards(scratchCardsRaw: scratchCardsRaw)
     var total = 0
     for scratchCard in scratchCards{
         total += (scratchCard.winningCount == 0 ? 0:(2 ^^ (scratchCard.winningCount-1)))
@@ -68,7 +68,7 @@ func day4a_func(scratchCardsRaw: [String]) throws -> Int{
 }
 //TODO: see if we can do an extention on the original method and apply this effect
 func day4b_func(scratchCardsRaw: [String]) throws -> Int{
-    var scratchCards: [scratchCard]=convertScratchCards(scratchCardsRaw: scratchCardsRaw)
+    let scratchCards: [scratchCard]=convertScratchCards(scratchCardsRaw: scratchCardsRaw)
     var total = 0
     //convoluded rules:
     //for first scartch card; there will always be 1 copy ever.

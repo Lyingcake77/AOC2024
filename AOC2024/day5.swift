@@ -6,17 +6,18 @@
 //
 
 import Foundation
-class newClass{
+
+class seedAlmanac{
     
 }
 
-func convertSomething(Raw: [String]) -> [newClass]{
-    var newClasses: [newClass]=[]
+func convertAlmanac(seedAlmanacRaw: [String]) -> [seedAlmanac]{
+    var newSeedAlmanacs: [seedAlmanac]=[]
     
-    return newClasses
+    return newSeedAlmanacs
 }
-func day5a_func(Raw: [String]) throws -> Int{
-    var newClasses: [newClass]=convertSomething(Raw: Raw)
+func day5a_func(seedAlmanacRaw: [String]) throws -> Int{
+    var newSeedAlmanacs: [seedAlmanac]=convertAlmanac(seedAlmanacRaw: seedAlmanacRaw)
     var total = 0
   
                   
@@ -24,8 +25,8 @@ func day5a_func(Raw: [String]) throws -> Int{
     return total
 }
 
-func day5b_func(Raw: [String]) throws -> Int{
-    var newClasses: [newClass]=convertSomething(Raw: Raw)
+func day5b_func(seedAlmanacRaw: [String]) throws -> Int{
+    var newSeedAlmanacs: [seedAlmanac]=convertAlmanac(seedAlmanacRaw: seedAlmanacRaw)
     var total = 0
   
                   
