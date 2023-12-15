@@ -44,10 +44,6 @@ class almanac{
                 x in (forwardDirection ? x.sourceName == sourceMap.destinationName : x.destinationName == sourceMap.sourceName)
             }.first
         
-        //there should always be a next SA because we checked if we reached the destination
-
-        
-        
         let ruleCount = sourceMap.sourceConversionRules.count
         var i = 0
         //loop through all the mappings
@@ -68,23 +64,19 @@ class almanac{
                     }
                     return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
                 }
-//                return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
             }
-//            else{
-//                //this works just like forwards, but backwards
-//                if currentRule.destinationRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].destinationRangeStart){
-//                    if currentRule.destinationRangeStart <= source && source < currentRule.destinationRangeStart + currentRule.rangeLength{
-//                        //double check this math, the one spot i didnt flush out, we want the conversion.
-//                        //TODO: handle going backwards
-//                        let diff = currentRule.rangeLength - source
-//                        let mappedSource = currentRule.sourceRangeStart + diff
-//                        
-//                        return sourceToDestination(sourceName: sourceMap.sourceName, source: mappedSource, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
-//                    }
-//                    return sourceToDestination(sourceName: sourceMap.destinationName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
-//                }
-//            }
-
+            else{
+                if currentRule.destinationRangeStart <= source && (endOfRange ? endOfRange : source < sourceMap.sourceConversionRules[i+1].destinationRangeStart){
+                    if currentRule.destinationRangeStart <= source && source < currentRule.destinationRangeStart + currentRule.rangeLength{
+                        //double check this math, the one spot i didnt flush out, we want the conversion.
+                        //TODO: handle going backwards
+                        let diff = source - currentRule.destinationRangeStart
+                        let mappedSource = currentRule.sourceRangeStart + diff
+                        return sourceToDestination(sourceName: sourceMap.sourceName, source: mappedSource, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+                    }
+                    return sourceToDestination(sourceName: sourceMap.sourceName, source: source, sourceMap: firstMap ?? sourceMap, finalDestinationName: finalDestinationName, forwardDirection: forwardDirection)
+                }
+            }
             
             
             i+=1
@@ -115,7 +107,7 @@ struct sourceConversionRule{
     }
 }
 //i feel this should be an extention in some way, its its own thing, but also related.
-func convertAlmanac(almanacRaw: [String]) -> ([Int], [sourceMap]){
+func convertAlmanac(almanacRaw: [String], forward:Bool = true) -> ([Int], [sourceMap]){
     var newSourceMaps: [sourceMap]=[]
     var seeds:[Int]=[]
 
@@ -154,7 +146,7 @@ func convertAlmanac(almanacRaw: [String]) -> ([Int], [sourceMap]){
                 
             }
             //order the rules...
-            rouceRules = rouceRules.sorted { $0.sourceRangeStart < $1.sourceRangeStart }
+            rouceRules = rouceRules.sorted { forward ? $0.sourceRangeStart < $1.sourceRangeStart : $0.destinationRangeStart < $1.destinationRangeStart }
             //create a map
             //loop through all numbers
             //exit loop
@@ -191,10 +183,83 @@ func day5a_func(almanacRaw: [String]) throws -> Int{
 }
 
 func day5b_func(almanacRaw: [String]) throws -> Int{
-    let (seeds, sourceMaps) = convertAlmanac(almanacRaw: almanacRaw)
-    let total = 0
-  
-                  
+    let (seeds, sourceMaps) = convertAlmanac(almanacRaw: almanacRaw, forward:false)
+    
+    let newAlmanac = almanac(sourceMaps: sourceMaps)
+    
+    var allSeedRanges: [ClosedRange<Int>] = []
+    
+    var j = 1
+    
+    var temp = 0
+    for i in seeds{
+        if j%2 == 0{
+            let f = (temp...(temp+i))
+            allSeedRanges.append(f)
+        }
+        else{
+            temp = i
+        }
+        j+=1
+    }
+    
+    var total = 0
+    
+    let id = "1234"
+    let dispatchGroup = DispatchGroup()
+
+
+    var returnedItems:[Int] = []
+    
+    func bruteForceLocationFinder(rangeStart:Int, RangeEnd:Int, al:almanac, allSeedRange:[ClosedRange<Int>]) {
+        for location in rangeStart...RangeEnd{
+            let seed = al.convertSourceToDestination(source: location, StartingMap: "location", EndingMap: "seed", forwardDirection: false)
+            var asd = 1
+            for i in allSeedRange{
+                if i.lowerBound <= seed && seed <= i.upperBound{
+                    returnedItems.append(location)
+                    print("+1")
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        returnedItems.append(-1)
+        print("-1")
+        dispatchGroup.leave()
+    }
+
+    
+    for i in 0...6{
+        dispatchGroup.enter()
+        bruteForceLocationFinder(rangeStart: i*10000000, RangeEnd: (i+1)*10000000, al: newAlmanac, allSeedRange: allSeedRanges)
+
+    }
+    
+        dispatchGroup.enter()
+        bruteForceLocationFinder(rangeStart: 70000000, RangeEnd: 70000010, al: newAlmanac, allSeedRange: allSeedRanges)
+    
+    // this will get called when all the tasks gets completed
+    dispatchGroup.notify(queue: .main) {
+        
+        var q = returnedItems.sorted {$0 < $1}
+        for f in q{
+            print(f)
+        }
+        total = q[0]
+        print("Execution completed")
+    }
     
     return total
+//
+//    for location in 0...1000000000{
+//        let seed = newAlmanac.convertSourceToDestination(source: location, StartingMap: "location", EndingMap: "seed", forwardDirection: false)
+//        var asd = 1
+//        for i in allSeedRanges{
+//            if i.lowerBound <= seed && seed <= i.upperBound{
+//                return location
+//            }
+//        }
+//    }
+    //pain
 }
+
