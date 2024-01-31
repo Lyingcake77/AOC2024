@@ -23,6 +23,8 @@ struct ContentView: View {
     @State private var Day5bResult = ""
     @State private var Day6aResult = ""
     @State private var Day6bResult = ""
+    @State private var Day7aResult = ""
+    @State private var Day7bResult = ""
     private let cache = dataLoader()
 
     var body: some View {
@@ -110,6 +112,20 @@ struct ContentView: View {
                         Label("Day 6b", systemImage: "pencil.and.outline")
                     }
                 Text(Day6bResult)
+                
+                }            
+                HStack {
+                    Button(action: day7a) {
+                        Label("Day 7a", systemImage: "pencil.and.outline")
+                    }
+                Text(Day7aResult)
+                
+            }
+            HStack {
+                    Button(action: day7b) {
+                        Label("Day 7b", systemImage: "pencil.and.outline")
+                    }
+                Text(Day7bResult)
                 
                 }
             }
@@ -274,6 +290,29 @@ struct ContentView: View {
                 let total = try day6b_func(raceRecordsRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/6/input"))
                 Day6bResult = String(total)
                 UIPasteboard.general.string =  Day6bResult
+            } catch {
+                print(error)
+            }
+        }
+    }
+    private func day7a() {
+        Task{
+            do {
+                let total = try day7a_func(handsRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/7/input"))
+                Day7aResult = String(total)
+                UIPasteboard.general.string =  Day7aResult
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    private func day7b() {
+        Task{
+            do {
+                let total = try day7b_func(handsRaw: try await cache.loadData(Url: "https://adventofcode.com/2023/day/7/input"))
+                Day7bResult = String(total)
+                UIPasteboard.general.string =  Day7bResult
             } catch {
                 print(error)
             }

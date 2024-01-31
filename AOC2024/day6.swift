@@ -62,31 +62,20 @@ func day6b_func(raceRecordsRaw: [String]) throws -> Int{
     var total = 0
   
     let newRaceStats: [raceStat] = convertSomething2(raceRecordsRaw: raceRecordsRaw)
+    //formula: (15-x)*x>40
     
-    var total = 1
-    //theres a math answer here
-    var possibleOptions = 0
     
     var raceDistance = Int(String(newRaceStats[0].distance)+String(newRaceStats[1].distance)+String(newRaceStats[2].distance)+String(newRaceStats[3].distance))
     var raceTime = Int(String(newRaceStats[0].time)+String(newRaceStats[1].time)+String(newRaceStats[2].time)+String(newRaceStats[3].time))
-    var raceTimeHalfWayPoihnt = raceTime/2
     
-    for timeHeld in 0...raceTime{
-        var maxDistance = timeHeld * (raceTime - timeHeld)
-        if (maxDistance > raceDistance){
-            possibleOptions+=1
-//                if raceTime > raceTimeHalfWayPoihnt{
-//                    possibleOptions = raceTime - timeHeld
-//                }
-//                else{
-//                    possibleOptions = (raceTime - timeHeld) * 2
-//
-//                }
-//                break
-        }
-    }
-    print(possibleOptions)
-    total *= possibleOptions
+    let b = raceTime
+    let a = 1
+    let c = -1*raceDistance
+    var lowerX = ceil(((-1*b)-sqrt((b**2-4*a*c))) / 2*a) //int upper
+    var upperX = floor(((-1*b)+sqrt((b**2-4*a*c))) / 2*a) //int lower
+    
+    total = upperX - lowerX
+    
     
     
     return total
